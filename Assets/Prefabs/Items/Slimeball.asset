@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e40d4d985053c4697518a7eabdd829, type: 3}
+  m_Name: Slimeball
+  m_EditorClassIdentifier: 
+  name: Slimeball
+  icon: {fileID: -155202744, guid: 708d1974038a41e458d1beb775ba6a91, type: 3}
+  isDefaultItem: 0
+  inGameObj: {fileID: 3856764326404295744, guid: a4700f92d3efbef4facb2c07437ca847,
+    type: 3}
