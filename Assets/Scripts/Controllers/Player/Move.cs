@@ -7,13 +7,14 @@ public class Move : MonoBehaviour
 {
     private Rigidbody rb;
     private float dirX, moveSpeed, dirZ;
+    public GameObject shadow;
 
     public Animator ChAnim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        moveSpeed = -5f;
+        moveSpeed = -10f;
     }
 
     void Update()
@@ -21,13 +22,28 @@ public class Move : MonoBehaviour
         dirX = CrossPlatformInputManager.GetAxis("Horizontal") * moveSpeed;
         dirZ = CrossPlatformInputManager.GetAxis("Vertical") * moveSpeed;
 
+        ChAnim.SetFloat("Horizontal", dirX);
+        ChAnim.SetFloat("Vertical", dirZ);
+        
+        if((dirX != 0) && (dirZ != 0))
+        {
+            ChAnim.SetFloat("Speed", 1);
+        }
+        else if((dirX == 0) && (dirZ == 0))
+        {
+            ChAnim.SetFloat("Speed", 0);
+        }
+        
+
         if (dirX < 0)
         {
             transform.localEulerAngles = new Vector3(-30, 0, 0);
+            shadow.transform.localEulerAngles = new Vector3(-60, 0, 0);
         }
         else if (dirX > 0)
         {
             transform.localEulerAngles = new Vector3(30, 180, 0);
+            shadow.transform.localEulerAngles = new Vector3(60, 0, 0);
         }
     }
 

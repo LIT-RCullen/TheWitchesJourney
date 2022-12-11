@@ -17,11 +17,13 @@ public class HealthUI : MonoBehaviour
     void Update()
     {
         SetHealth(Health.currentHealth);
+
     }
 
     public void SetHealth(float health)
     {
         slider.value = health;
+
     }
     
 }

@@ -17,10 +17,6 @@ public class InventoryUI : MonoBehaviour
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
     }
 
-    void Update()
-    {
-        
-    }
 
     void UpdateUI()
     {

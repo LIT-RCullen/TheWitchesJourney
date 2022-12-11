@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOver;
+    public GameObject enemies;
     #region Singleton
 
     public static GameManager instance;
@@ -20,5 +21,6 @@ public class GameManager : MonoBehaviour
     public void killPlayer()
     {
         gameOver.SetActive(true);
+        Destroy(enemies);
     }
 }

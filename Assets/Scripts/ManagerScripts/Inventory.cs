@@ -3,8 +3,15 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    #region Singleton
     public static Inventory instance;
+    public delegate void OnItemChanged();
+    public OnItemChanged onItemChangedCallback;
+
+    public int space = 20;
+
+    public List<Item> items = new List<Item>();
+ 
+    ListSlot questItem;
 
     void Awake ()
     {
@@ -16,17 +23,17 @@ public class Inventory : MonoBehaviour
 
         instance = this;
     }
-    #endregion
 
-    public delegate void OnItemChanged();
-    public OnItemChanged onItemChangedCallback;
 
-    public int space = 20;
-
-    public List<Item> items = new List<Item>();
 
     public bool Add (Item item)
     {
+        if (QuestList.instance.Qitems.Contains(item))
+        {
+            questItem = QuestList.instance.slots[QuestList.instance.Qitems.IndexOf(item)].GetComponent<ListSlot>();
+            questItem.AddAmount();
+        }
+
         if (items.Count >= space)
         {
             Debug.Log("Not enough room.");
@@ -38,7 +45,7 @@ public class Inventory : MonoBehaviour
         {
             onItemChangedCallback.Invoke();
         }
-        
+
         return true;
     }
 

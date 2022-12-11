@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
 {
-
     public Item item;
 
     void OnTriggerEnter(Collider collider)
     {
         if (collider.tag == "Player")
         {
-            PickUp();
+            PickUp();  
         }
     }
 
