@@ -6,5 +6,6 @@ public class Potion : ScriptableObject
     new public string name = "New Potion";
     public Sprite icon = null;
     public GameObject inGameObj;
-    public int Amount;
+    public int AmountDH;
+    public int useAmount = 3;
 }

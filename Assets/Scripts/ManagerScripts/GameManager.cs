@@ -5,8 +5,6 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameOver;
-    public GameObject enemies;
-    #region Singleton
 
     public static GameManager instance;
 
@@ -16,11 +14,9 @@ public class GameManager : MonoBehaviour
         gameOver.SetActive(false);
     }
 
-    #endregion
-
     public void killPlayer()
     {
         gameOver.SetActive(true);
-        Destroy(enemies);
+        Time.timeScale = 0;
     }
 }

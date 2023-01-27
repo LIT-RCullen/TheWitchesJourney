@@ -12,7 +12,7 @@ public class QuestList : MonoBehaviour
 
     public ListSlot[] slots;
 
-    public static QuestList instance;
+    public static QuestList InstanceQuestList;
 
     void Awake()
     {
@@ -20,13 +20,13 @@ public class QuestList : MonoBehaviour
         {
             Debug.LogWarning("Too many quest items! Maximum count = 3.");
         }
-        if (instance != null)
+        if (InstanceQuestList != null)
         {
             Debug.LogWarning("More than one instance of QuestList found!");
             return;
         }
 
-        instance = this;
+        InstanceQuestList = this;
     }
 
     void Start()
@@ -34,7 +34,6 @@ public class QuestList : MonoBehaviour
         slots = listParent.GetComponentsInChildren<ListSlot>();
         UpdateUI();
     }
-
 
     void UpdateUI()
     {

@@ -17,7 +17,7 @@ public class InventorySlot : MonoBehaviour
 
     void Awake()
     {
-        playerPos = PlayerManager.instance;
+        playerPos = PlayerManager.InstancePlayer;
     }
 
     public void AddItem (Item newItem)
@@ -44,6 +44,6 @@ public class InventorySlot : MonoBehaviour
         tempZ = Random.Range(-5, 5) + playerPos.player.transform.position.z;
 
         Instantiate(item.inGameObj, new Vector3(tempX, 1.5f, tempZ), item.inGameObj.transform.rotation);
-        Inventory.instance.Remove(item);
+        Inventory.InstanceInventory.Remove(item);
     }
 }

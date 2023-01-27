@@ -16,4 +16,5 @@ MonoBehaviour:
   icon: {fileID: 74132728, guid: 5c7ebd8c6bee1b34ca2345bb39d6f135, type: 3}
   inGameObj: {fileID: 3873045494562605134, guid: 089772e894180074f938cac04ea97df8,
     type: 3}
-  Amount: 1
+  AmountDH: 1
+  useAmount: 8

@@ -7,6 +7,7 @@ public class Move : MonoBehaviour
 {
     private Rigidbody rb;
     private float dirX, moveSpeed, dirZ;
+    public float dashSpeed, dashTime;
     public GameObject shadow;
 
     public Animator ChAnim;
@@ -19,6 +20,7 @@ public class Move : MonoBehaviour
 
     void Update()
     {
+        
         dirX = CrossPlatformInputManager.GetAxis("Horizontal") * moveSpeed;
         dirZ = CrossPlatformInputManager.GetAxis("Vertical") * moveSpeed;
 
@@ -55,5 +57,23 @@ public class Move : MonoBehaviour
     public void Attack()
     {
         ChAnim.SetTrigger("Attack");
+    }
+
+    public void Dash()
+    {
+        StartCoroutine(CDash());
+    }
+
+    IEnumerator CDash()
+    {
+        float startTime = Time.time;
+
+        while(Time.time < startTime + dashTime)
+        {
+            dirX = dirX * dashSpeed * Time.deltaTime;
+            dirZ = dirZ * dashSpeed * Time.deltaTime;
+
+            yield return null;
+        }
     }
 }

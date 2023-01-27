@@ -9,12 +9,17 @@ public class ButtonsUI : MonoBehaviour
 
     void Start()
     {
-        pControl = PlayerManager.instance.player.GetComponent<Move>();
+        pControl = PlayerManager.InstancePlayer.player.GetComponent<Move>();
     }
 
     public void ClickButtonAttack()
     {
         pControl.Attack();
+    }
+
+    public void ClickButtonDash()
+    {
+        pControl.Dash();
     }
 
     public void RestartGame()

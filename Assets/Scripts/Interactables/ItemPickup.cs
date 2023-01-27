@@ -10,17 +10,17 @@ public class ItemPickup : MonoBehaviour
     {
         if (collider.tag == "Player")
         {
-            PickUp();  
+            PickUp();
         }
     }
 
     void PickUp()
     {
         Debug.Log("Picked up item.");
-        bool wasPickedUp = Inventory.instance.Add(item);
+        bool wasPickedUp = Inventory.InstanceInventory.Add(item);
         if (wasPickedUp)
-        { 
-            Destroy(gameObject); 
+        {
+            Destroy(gameObject);
         }
     }
 }

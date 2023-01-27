@@ -27,7 +27,7 @@ public class EnemyAttack : MonoBehaviour
     
     void Start()
     {
-        target = PlayerManager.instance.player.transform;
+        target = PlayerManager.InstancePlayer.player.transform;
 
     }
 

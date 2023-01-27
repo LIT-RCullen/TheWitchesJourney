@@ -25,7 +25,7 @@ public class EnemyController : MonoBehaviour
     void Start()
     {
         transform.position = new Vector3(transform.position.x, StartY, transform.position.z);
-        target = PlayerManager.instance.player.transform;
+        target = PlayerManager.InstancePlayer.player.transform;
         agent = GetComponent<NavMeshAgent>();
         agent.updateUpAxis = false;
         currentPos = transform.position;
